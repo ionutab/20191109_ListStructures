@@ -23,6 +23,13 @@ public class Main {
 
         myLinkedList.add(33);
         myLinkedList.show();
+        System.out.println(myLinkedList.getAt(3));
+        System.out.println(myLinkedList.getAt(7));
+//        System.out.println(myLinkedList.getAt(200));
+        myLinkedList.removeAt(3);
+//        myLinkedList.removeAt(2);
+        myLinkedList.show();
 
+        myLinkedList.showReverse(myLinkedList.start);
     }
 }

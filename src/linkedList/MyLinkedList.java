@@ -37,4 +37,45 @@ public class MyLinkedList {
         System.out.println();
     }
 
+    public void showReverse(Node n) {
+        if (n.next != null) {
+            showReverse(n.next);
+        }
+        System.out.print(n.value + " ");
+    }
+
+    public int getAt(int index) {
+//        int step = 0;
+//        Node n = start;
+//        while (step < index) {
+//            n = n.next;
+//            step++;
+//        }
+        Node n = getNodeAt(index);
+        return n.value;
+    }
+
+    public Node getNodeAt(int index) {
+        int step = 0;
+        Node n = start;
+        while (step < index) {
+            n = n.next;
+            step++;
+        }
+        return n;
+    }
+
+    public void removeAt(int index) {
+        if (index == 0) {
+            start = start.next;
+        } else {
+            // the node before the node we have to remove
+            Node n = getNodeAt(index - 1);
+            Node nodeToDelete = n.next;
+            if (nodeToDelete != null) {
+                n.next = nodeToDelete.next;
+            }
+        }
+    }
+
 }
